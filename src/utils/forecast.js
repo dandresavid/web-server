@@ -9,7 +9,8 @@ const geocode = (latitud, longitud, callback) => {
             callback('Unable to find location. Try another search.', undefined)
         } else {
             callback(undefined,  
-                body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.')
+                body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain. ' + 
+                'The minimum temperature is '+ body.daily.data[0].temperatureLow + ' and the maximun temperature is ' + body.daily.data[0].temperatureHigh)
         }
     })
 }
